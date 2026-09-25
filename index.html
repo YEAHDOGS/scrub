@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>SCRUB — kill the metadata, keep the pixels</title>
-    <meta name="description" content="Strip GPS, EXIF and every hidden tag from your images. 100% in your browser. Nothing uploads." />
+    <meta name="description" content="Strip GPS, EXIF and every hidden tag from your images and videos. 100% in your browser. Nothing uploads." />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
@@ -27,16 +27,16 @@
         <div class="state" id="state-idle">
           <button class="dropzone" id="dropzone">
             <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
-            <strong>DROP AN IMAGE</strong>
+            <strong>DROP IMAGE OR VIDEO</strong>
             <span>or tap to pick &middot; or paste it</span>
           </button>
-          <input type="file" id="file-input" accept="image/*" hidden />
+          <input type="file" id="file-input" accept="image/*,video/*" hidden />
         </div>
 
         <!-- loaded -->
         <div class="state hidden" id="state-loaded">
           <div class="split">
-            <div class="thumb"><img id="preview" alt="your image" /></div>
+            <div class="thumb"><img id="preview-img" alt="your image" /><video id="preview-video" class="hidden" muted playsinline preload="metadata" controls></video></div>
             <div class="findings">
               <div class="findings-head"><span id="tag-count">0</span> TAGS FOUND</div>
               <ul id="tag-list"></ul>

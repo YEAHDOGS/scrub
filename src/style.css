@@ -118,7 +118,8 @@ header p { margin: 6px 0 0; font-size: 11px; color: rgba(238,241,255,.6); letter
   display: flex;
 }
 
-.thumb img { width: 100%; height: 100%; object-fit: contain; }
+.thumb img, .thumb video { width: 100%; height: 100%; object-fit: contain; }
+.thumb video { background: #000; }
 
 .findings {
   background: rgba(0,0,0,.3);
